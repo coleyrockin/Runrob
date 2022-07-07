@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+body {
+    background-image: url(/Users/ruminertt/Desktop/projects/Runrob/assets/images/davies-designs-studio-bk4Y_ahdvtA-unsplash.jpg);
+    background-size: cover;
+    
+}
+
+    .title{
+        text-align: center;
+        /* padding-top: 40px; */
+        color: #f63a43;
+        /* font-size: 50px; */
+        font-family: serif;
+    }
+.form-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 200px;
+}
+.wide{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 10%;
+   
+}
+.form-el{
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: #87cefa;
+}
+.eatBtn {
+    background-color: #87cefa;
+}
