@@ -1,16 +1,15 @@
-* {
+/* * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 
-  }
+  } */
 body {
-    background-image: url("../images/food.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../images/food3.jpg");
     background-size: cover;
     
 }
 
-.title {
+/* .title {
     text-align: center;
     
     color: #f63a43;
@@ -48,4 +47,4 @@ body {
 
 .eatBtn {
     background-color: #87cefa;
-}  
+}   */

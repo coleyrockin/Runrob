@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    
     <title>Document</title>
+
 </head>
 <body>
-    <div class="bg-scroll..." style="background-image: url('../images/food.jpg')"></div>
     <header>
         <!-- <h1 class="title">Nutri Wizard</h1> -->
     </header>
-    <div class=""> 
+    <div class="form-div"> 
         <form class="row wide">
-            <input class=""  id="input" placeholder="insert grocery item here"  name="food" type="text"/>
-            <button id="searchBtn" class="" type="submit">Lets Eat!</button>
+            <input class="col-3 form-el"  id="input" placeholder="insert grocery item here"  name="food" type="text"/>
+            <button id="searchBtn" class="col-3 form-el eatBtn search-btn" type="submit">Lets Eat!</button>
         </form>
 
-        <div id="food" class="">
+        <div id="food">
 
         </div>
-    
     <script src="./assets/js/script.js"></script>
 </body>
+</html>
