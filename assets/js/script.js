@@ -16,7 +16,7 @@ var getNutrition = function(food){
             
             var foodTitle = document.createElement("div");
             foodTitle.setAttribute("class", "card-header-title");
-            foodTitle.textContent = f;
+            foodTitle.textContent = food;
              
             var foodP= document.createElement("p");
             foodP.setAttribute("class", "card-content");
