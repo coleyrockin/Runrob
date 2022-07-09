@@ -1,4 +1,4 @@
-.bg-img { 
-    background-image: url("../images/healthiest-food-for-every-day-2000.jpg") ;
-
+html {
+    background-image:url("../images/food3.jpg");
+    background-repeat: no-repeat;
 }
