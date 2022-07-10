@@ -2,7 +2,6 @@ var buttonEl = document.querySelector("#searchBtn");
 var inputEl = document.querySelector("#input");
 var foodEl = document.querySelector("#food");
 
-
 var getNutrition = function(food){
     var apiUrl = "https://api.edamam.com/api/nutrition-data?app_id=34642c65&app_key=d86fd599cef056ad8909daacaab63cf2&nutrition-type=logging&ingr=" + food;
     fetch(apiUrl).then(function(response){
@@ -32,9 +31,27 @@ var getNutrition = function(food){
     });
 };
 
+var getProductPrice = function(foodPrice){
+    var apiUrl2 = "https://api.redcircleapi.com/request?api_key=8F36CF55536D4A5E85C6E3625ECB6127&type=search&search_term=" + foodPrice;
+
+
+    fetch(apiUrl2).then(function(response){
+        response.json().then(function(data){
+        console.log(data)
+        })
+    })
+}
+
+var getPrice= function(event){
+    event.preventDefault()
+    var price = inputEl.value.trim();
+    getProductPrice(price);
+};
+
 var getFood = function(event){
     event.preventDefault()
     var food = inputEl.value.trim();
     getNutrition(food);
 };
-buttonEl.addEventListener("click", getFood);
+buttonEl.addEventListener("click", getProductPrice);
+
