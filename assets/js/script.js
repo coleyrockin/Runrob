@@ -53,5 +53,7 @@ var getFood = function(event){
     var food = inputEl.value.trim();
     getNutrition(food);
 };
-buttonEl.addEventListener("click", getProductPrice);
+buttonEl.addEventListener("click", getPrice)
+buttonEl.addEventListener("click", getFood)
+
 
