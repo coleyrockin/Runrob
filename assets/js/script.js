@@ -8,7 +8,9 @@ var getNutrition = function(food){
      
      fetch(apiUrl).then(function(response){
          response.json().then(function(data){
-             var foodData =  (data.totalNutrients.PROCNT.quantity / data.calories).toFixed(2) +  data.totalNutrients.PROCNT.unit + " of " + data.totalNutrients.PROCNT.label  + " per calorie";
+             var foodData1 =  (data.totalNutrients.PROCNT.quantity / data.calories).toFixed(2) +  data.totalNutrients.PROCNT.unit + " of " + data.totalNutrients.PROCNT.label  + " per calorie";
+             var foodData2 = (data.totalNutrients.CHOCDF.quantity / data.calories).toFixed(2) +  data.totalNutrients.CHOCDF.unit + " of " + data.totalNutrients.CHOCDF.label  + " per calorie";
+             var foodData3 = (data.totalNutrients.FAT.quantity / data.calories).toFixed(2) +  data.totalNutrients.FAT.unit + " of " + data.totalNutrients.FAT.label  + " per calorie";
              
              var foodHeader = document.createElement("div");
              foodHeader.setAttribute("class", "card-header");
@@ -17,18 +19,29 @@ var getNutrition = function(food){
             
              var foodTitle = document.createElement("div");
              foodTitle.setAttribute("class", "card-header-title");
-             foodTitle.textContent = f;
+             foodTitle.textContent = food;
              
-             var foodP= document.createElement("p");
-             foodP.setAttribute("class", "card-content");
-             foodP.textContent = foodData;
+             var foodP1= document.createElement("p");
+             foodP1.setAttribute("class", "card-content");
+             foodP1.textContent = foodData1;
+
+             var foodP2= document.createElement("p");
+             foodP2.setAttribute("class", "card-content");
+             foodP2.textContent = foodData2;
+
+             var foodP3= document.createElement("p");
+             foodP3.setAttribute("class", "card-content");
+             foodP3.textContent = foodData3;
+             
              
              
              
             
              
              foodHeader.appendChild(foodTitle);
-             foodTitle.appendChild(foodP);
+             foodTitle.appendChild(foodP1);
+             foodTitle.appendChild(foodP2);
+             foodTitle.appendChild(foodP3);
             
              
     
@@ -48,7 +61,8 @@ var getProductPrice = function(foodPrice){
         console.log(data)
 
         var priceEl = document.createElement("p");
-        priceEl.textContent = ((data.search_results[0].offers.primary.price + data.search_results[1].offers.primary.price + data.search_results[2].offers.primary.price + data.search_results[3].offers.primary.price) / 4).toFixed(2);
+        priceEl.setAttribute("class", "card-content")
+        priceEl.textContent = "$" + ((data.search_results[0].offers.primary.price + data.search_results[1].offers.primary.price + data.search_results[2].offers.primary.price + data.search_results[3].offers.primary.price) / 4).toFixed(2) + " Avg Price";
 
         foodEl.appendChild(priceEl);
 
