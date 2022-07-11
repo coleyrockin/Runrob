@@ -4,6 +4,7 @@ var foodEl = document.querySelector("#food");
 
 var getNutrition = function(food){
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 
 
@@ -37,6 +38,8 @@ var getNutrition = function(food){
             foodEl.appendChild(foodHeader);
                console.log(data);
 =======
+=======
+>>>>>>> feature/tanner
     var apiUrl = "https://api.edamam.com/api/nutrition-data?app_id=34642c65&app_key=d86fd599cef056ad8909daacaab63cf2&nutrition-type=logging&ingr=" + food;
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
@@ -60,19 +63,28 @@ var getNutrition = function(food){
             
             foodEl.appendChild(foodHeader);
             console.log(data);
+<<<<<<< HEAD
 >>>>>>> 756edd1c228976b668876dd22405f8299fd7850b
+=======
+>>>>>>> feature/tanner
 
         });
     });
 };
 
 var getProductPrice = function(foodPrice){
-    var apiUrl2 = "https://api.redcircleapi.com/request?api_key=8F36CF55536D4A5E85C6E3625ECB6127&type=search&search_term=" + foodPrice;
+    var apiUrl2 = "https://api.redcircleapi.com/request?api_key=8F36CF55536D4A5E85C6E3625ECB6127&type=search&search_term=" + foodPrice + "&sort_by=best_match";
 
 
     fetch(apiUrl2).then(function(response){
         response.json().then(function(data){
         console.log(data)
+
+        var priceEl = document.createElement("p");
+        priceEl.textContent = ((data.search_results[0].offers.primary.price + data.search_results[1].offers.primary.price + data.search_results[2].offers.primary.price + data.search_results[3].offers.primary.price) / 4).toFixed(2);
+
+        foodEl.appendChild(priceEl);
+
         })
     })
 }
@@ -88,5 +100,5 @@ var getFood = function(event){
     var food = inputEl.value.trim();
     getNutrition(food);
 };
-buttonEl.addEventListener("click", getProductPrice);
-
+buttonEl.addEventListener("click", getFood);
+buttonEl.addEventListener("click", getPrice);
