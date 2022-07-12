@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Nutrition Wizzard</title>
@@ -13,34 +16,35 @@
 
 <body>
 <!-- Navbar with image, title, using Bulma CSS framework -->
-<nav class="navbar is is-transparent" style="background-color:transparent;">
-    <div class="navbar-menu">
-          <a class="navbar-item column"> -->
-          <img class="mt-4" src="assets/images/wizava.jpeg" style="max-height: 75px; border-radius: 50px;">
-          <h1 class="is-size-2 ml-6 has-text-centered">Nutri Wizzard</h1>
-          </a>
-        
+<nav class="navbar is-transparent is-flex-mobile" role="navigation" style="background-color:transparent;">
+          <img class="navbar-brand m-3" src="assets/images/wizava.jpeg" style="max-height: 75px; border-radius: 50px;">
+          <div class="navbar-item has-text-black-bis is-size-1" style="font-family: 'Playfair Display', serif;">Nutri Wizzard</div>
 <!-- End of nav bar with grocery list -->
 <div class="navbar-end">
-      <a class="navbar-item"> 
+      <a class="navbar-menu"> 
         <span class="icon-text">
         <span class="oi" data-glyph="basket"></span>
         <span> Grocery List</span>
         </span>
       </a>                
     </div>
-  </div>
 </nav>
            
 <!--Container input food information, Click button-->
-<div class="mt-6">
+<div class="mt-6 is-flex-mobile">
   <div class="container is-centered">
-    <input id="input" class="column input has-text-centered " type="text" placeholder="Enter a food item">
-    <button id="searchBtn" class="button is-fullwidth is-primary" type="submit" style="text-align: center">Lets Eat!</button>
+    <div class="field is-grouped">
+      <p class="control is-expanded ">
+      <input id="input" class="input is-rounded" type="text" placeholder="Enter food Item please!">
+      </p>
+      <p class="control">
+      <button id="searchBtn" class="button is-primary is-rounded" type="submit">Lets Eat!</button>
+    </div>
   </div>
 </div>
 <!-- Container output food informatiion from API NOT WORKING ON MY SCREEN**** -->
 <div id="food" class="container card mt-6"></div>
+
         
 <script src="./assets/js/script.js"></script>
 
