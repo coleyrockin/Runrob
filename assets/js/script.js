@@ -1,6 +1,12 @@
 var buttonEl = document.querySelector("#searchBtn");
 var inputEl = document.querySelector("#input");
 var foodEl = document.querySelector("#food");
+var saveBtn = document.createElement("button");
+
+saveBtn.setAttribute("class", "");
+saveBtn.classList = "button is-primary is-rounded";
+saveBtn.textContent = "Save";
+
 
 var getNutrition = function(food){
 
@@ -20,18 +26,22 @@ var getNutrition = function(food){
              var foodTitle = document.createElement("div");
              foodTitle.setAttribute("class", "card-header-title");
              foodTitle.textContent = food;
+             localStorage.setItem("FoodInfo1" , foodTitle.textContent);
              
              var foodP1= document.createElement("p");
              foodP1.setAttribute("class", "card-content");
              foodP1.textContent = foodData1;
+             localStorage.setItem("FoodInfo2" , foodP1.textContent );
 
              var foodP2= document.createElement("p");
              foodP2.setAttribute("class", "card-content");
              foodP2.textContent = foodData2;
+             localStorage.setItem("FoodInfo3" , foodP2.textContent );
 
              var foodP3= document.createElement("p");
              foodP3.setAttribute("class", "card-content");
              foodP3.textContent = foodData3;
+             localStorage.setItem("FoodInfo4" ,  foodP3.textContent);
              
              
              
@@ -63,8 +73,12 @@ var getProductPrice = function(foodPrice){
         var priceEl = document.createElement("p");
         priceEl.setAttribute("class", "card-content")
         priceEl.textContent = "$" + ((data.search_results[0].offers.primary.price + data.search_results[1].offers.primary.price + data.search_results[2].offers.primary.price + data.search_results[3].offers.primary.price) / 4).toFixed(2) + " Avg Price";
+        localStorage.setItem("foodPrice" ,  priceEl.textContent);
 
         foodEl.appendChild(priceEl);
+        foodEl.appendChild(saveBtn);
+
+        
 
         })
     })
@@ -81,5 +95,14 @@ var getFood = function(event){
     var food = inputEl.value.trim();
     getNutrition(food);
 };
+
+// var setFoodStorage = function(){
+//     localStorage.setItem("FoodInfo1" , foodTitle.textContent);
+//     localStorage.setItem("FoodInfo2" , foodP1.textContent );
+//     localStorage.setItem("FoodInfo3" , foodP2.textContent );
+//     localStorage.setItem("FoodInfo4" ,  foodP3.textContent);
+// }
+
 buttonEl.addEventListener("click", getFood);
 buttonEl.addEventListener("click", getPrice);
+// saveBtn.addEventListener("click", setFoodStorage);
