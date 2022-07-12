@@ -8,11 +8,9 @@ https://github.com/coleyrockin -Boyd R
 
 https://github.com/coleyrockin/Runrob -Repository
 
-https://coleyrockin.github.io/Runrob/ -Deployed Application
-
 Project Requirements
 1. Use a CSS framework other than Bootstrap - (We used https://bulma.io/ **)
-2. Be deployed to GitHub Pages.
+2. Be deployed to GitHub Pages. - ( https://coleyrockin.github.io/Runrob/ Deployed application**)
 3. Be interactive (i.e., accept and respond to user input).
 4. Use at least two server-side APIs. (Used Edamam and Redcircle API **)
 5. Does not use alerts, confirms, or prompts (use modals).
