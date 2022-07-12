@@ -3,8 +3,11 @@ Runrob, AKA Nutri Wizzard was starting name behind the most secretive, innovativ
 Collaborative Project by Tanner Runiner and Boyd Roberts.
 
 https://github.com/T-rummy -Tanner R
+
 https://github.com/coleyrockin -Boyd R
+
 https://github.com/coleyrockin/Runrob -Repository
+
 https://coleyrockin.github.io/Runrob/ -Deployed Application
 
 Project Requirements
