@@ -8,6 +8,7 @@ saveBtn.classList = "button is-primary is-rounded";
 saveBtn.textContent = "Save";
 
 
+
 // First API EDAMAM getting nutritonal facts - Protein, Carbs, Fat
 var getNutrition = function(food){
     var apiUrl = "https://api.edamam.com/api/nutrition-data?app_id=34642c65&app_key=d86fd599cef056ad8909daacaab63cf2&nutrition-type=logging&ingr=" + food;
@@ -25,35 +26,30 @@ var getNutrition = function(food){
         foodTitle.setAttribute("class", "card-header-title");
         foodTitle.textContent = food;
             
-             var foodTitle = document.createElement("div");
-             foodTitle.setAttribute("class", "card-header-title");
-             foodTitle.textContent = food;
-             localStorage.setItem("FoodInfo1" , foodTitle.textContent);
+        var foodTitle = document.createElement("div");
+        foodTitle.setAttribute("class", "card-header-title");
+        foodTitle.textContent = food;
+        localStorage.setItem("FoodInfo1" , foodTitle.textContent);
              
-             var foodP1= document.createElement("p");
-             foodP1.setAttribute("class", "card-content");
-             foodP1.textContent = foodData1;
-             localStorage.setItem("FoodInfo2" , foodP1.textContent );
+        var foodP1= document.createElement("p");
+        foodP1.setAttribute("class", "card-content");
+        foodP1.textContent = foodData1;
+        localStorage.setItem("FoodInfo2" , foodP1.textContent);
 
-             var foodP2= document.createElement("p");
-             foodP2.setAttribute("class", "card-content");
-             foodP2.textContent = foodData2;
-             localStorage.setItem("FoodInfo3" , foodP2.textContent );
+        var foodP2= document.createElement("p");
+        foodP2.setAttribute("class", "card-content");
+        foodP2.textContent = foodData2;
+        localStorage.setItem("FoodInfo3" , foodP2.textContent);
 
-             var foodP3= document.createElement("p");
-             foodP3.setAttribute("class", "card-content");
-             foodP3.textContent = foodData3;
-             localStorage.setItem("FoodInfo4" ,  foodP3.textContent);
+        var foodP3= document.createElement("p");
+        foodP3.setAttribute("class", "card-content");
+        foodP3.textContent = foodData3;
+        localStorage.setItem("FoodInfo4" , foodP3.textContent);
              
-             
-             
-             
-            
-             
-             foodHeader.appendChild(foodTitle);
-             foodTitle.appendChild(foodP1);
-             foodTitle.appendChild(foodP2);
-             foodTitle.appendChild(foodP3);
+        foodHeader.appendChild(foodTitle);
+        foodTitle.appendChild(foodP1);
+        foodTitle.appendChild(foodP2);
+        foodTitle.appendChild(foodP3);
             
              
         foodHeader.appendChild(foodTitle);
@@ -62,6 +58,8 @@ var getNutrition = function(food){
         foodTitle.appendChild(foodP3);
         foodEl.appendChild(foodHeader);
         console.log(data);
+
+        
         })
     })
 };
@@ -80,9 +78,6 @@ var getProductPrice = function(foodPrice){
 
         foodEl.appendChild(priceEl);
         foodEl.appendChild(saveBtn);
-
-        
-
         })
     })
 };
