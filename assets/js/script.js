@@ -1,13 +1,68 @@
 var buttonEl = document.querySelector("#searchBtn");
 var inputEl = document.querySelector("#input");
 var foodEl = document.querySelector("#food");
-var saveBtn = document.createElement("button");
-
-saveBtn.setAttribute("class", "");
-saveBtn.classList = "button is-primary is-rounded";
-saveBtn.textContent = "Save";
 
 
+
+
+if (localStorage.getItem("FoodInfo1")){
+    var foodHeader = document.createElement("div");
+    foodHeader.setAttribute("class", "card-header");
+    foodHeader.classList = "mt-3"
+     
+
+        
+         var foodTitle = document.createElement("div");
+         foodTitle.setAttribute("class", "card-header-title");
+         var input0 = localStorage.getItem("FoodInfo1");
+         foodTitle.textContent = input0;
+         
+         
+         var foodP1= document.createElement("p");
+         foodP1.setAttribute("class", "card-content");
+         var input1 = localStorage.getItem("FoodInfo2");
+         foodP1.textContent = input1;
+         
+
+         var foodP2= document.createElement("p");
+         foodP2.setAttribute("class", "card-content");
+         var input2 = localStorage.getItem("FoodInfo3");
+         foodP2.textContent = input2;
+         
+
+         var foodP3= document.createElement("p");
+         foodP3.setAttribute("class", "card-content");
+         var input3 = localStorage.getItem("FoodInfo4");
+         foodP3.textContent = input3;
+
+         var priceEl = document.createElement("p");
+         priceEl.setAttribute("class", "card-content")
+         var input5 = localStorage.getItem("foodPrice");
+         priceEl.textContent = input5;
+ 
+         
+         
+         
+         
+         
+         
+        
+         
+         foodHeader.appendChild(foodTitle);
+         foodTitle.appendChild(foodP1);
+         foodTitle.appendChild(foodP2);
+         foodTitle.appendChild(foodP3);
+        
+         
+    foodHeader.appendChild(foodTitle);
+    foodTitle.appendChild(foodP1);
+    foodTitle.appendChild(foodP2);
+    foodTitle.appendChild(foodP3);
+    foodEl.appendChild(foodHeader);
+
+    foodEl.appendChild(priceEl);
+  
+}
 
 // First API EDAMAM getting nutritonal facts - Protein, Carbs, Fat
 var getNutrition = function(food){
@@ -22,29 +77,44 @@ var getNutrition = function(food){
         foodHeader.setAttribute("class", "card-header");
         foodHeader.classList = "mt-3"
          
-        var foodTitle = document.createElement("div");
-        foodTitle.setAttribute("class", "card-header-title");
-        foodTitle.textContent = food;
+    
             
-        var foodTitle = document.createElement("div");
-        foodTitle.setAttribute("class", "card-header-title");
-        foodTitle.textContent = food;
-        localStorage.setItem("FoodInfo1" , foodTitle.textContent);
+             var foodTitle = document.createElement("div");
+             foodTitle.setAttribute("class", "card-header-title");
+             foodTitle.textContent = food;
+             localStorage.setItem("FoodInfo1" , food);
+             var input0 = localStorage.getItem("FoodInfo1");
+             foodTitle.textContent = input0;
              
-        var foodP1= document.createElement("p");
-        foodP1.setAttribute("class", "card-content");
-        foodP1.textContent = foodData1;
-        localStorage.setItem("FoodInfo2" , foodP1.textContent);
+             
+             var foodP1= document.createElement("p");
+             foodP1.setAttribute("class", "card-content");
+             foodP1.textContent = foodData1;
+             localStorage.setItem("FoodInfo2" , foodData1 );
+             var input1 = localStorage.getItem("FoodInfo2");
+             foodP1.textContent = input1;
+             
 
-        var foodP2= document.createElement("p");
-        foodP2.setAttribute("class", "card-content");
-        foodP2.textContent = foodData2;
-        localStorage.setItem("FoodInfo3" , foodP2.textContent);
+             var foodP2= document.createElement("p");
+             foodP2.setAttribute("class", "card-content");
+             foodP2.textContent = foodData2;
+             localStorage.setItem("FoodInfo3" , foodData2);
+             var input2 = localStorage.getItem("FoodInfo3");
+             foodP2.textContent = input2;
+             
 
-        var foodP3= document.createElement("p");
-        foodP3.setAttribute("class", "card-content");
-        foodP3.textContent = foodData3;
-        localStorage.setItem("FoodInfo4" , foodP3.textContent);
+             var foodP3= document.createElement("p");
+             foodP3.setAttribute("class", "card-content");
+             foodP3.textContent = foodData3;
+             localStorage.setItem("FoodInfo4" ,  foodData3);
+             var input3 = localStorage.getItem("FoodInfo4");
+             foodP3.textContent = input3;
+             
+             
+             
+             
+             
+            
              
         foodHeader.appendChild(foodTitle);
         foodTitle.appendChild(foodP1);
@@ -57,8 +127,6 @@ var getNutrition = function(food){
         foodTitle.appendChild(foodP2);
         foodTitle.appendChild(foodP3);
         foodEl.appendChild(foodHeader);
-        console.log(data);
-
         
         })
     })
@@ -75,6 +143,8 @@ var getProductPrice = function(foodPrice){
         priceEl.setAttribute("class", "card-content")
         priceEl.textContent = "$" + ((data.search_results[0].offers.primary.price + data.search_results[1].offers.primary.price + data.search_results[2].offers.primary.price + data.search_results[3].offers.primary.price) / 4).toFixed(2) + " Avg Price";
         localStorage.setItem("foodPrice" ,  priceEl.textContent);
+        var input5 = localStorage.getItem("foodPrice");
+        priceEl.textContent = input5;
 
         foodEl.appendChild(priceEl);
         foodEl.appendChild(saveBtn);
@@ -94,13 +164,8 @@ var getFood = function(event){
     getNutrition(food);
 };
 
-// var setFoodStorage = function(){
-//     localStorage.setItem("FoodInfo1" , foodTitle.textContent);
-//     localStorage.setItem("FoodInfo2" , foodP1.textContent );
-//     localStorage.setItem("FoodInfo3" , foodP2.textContent );
-//     localStorage.setItem("FoodInfo4" ,  foodP3.textContent);
-// }
+
 
 buttonEl.addEventListener("click", getFood);
 buttonEl.addEventListener("click", getPrice);
-// saveBtn.addEventListener("click", setFoodStorage);
+
