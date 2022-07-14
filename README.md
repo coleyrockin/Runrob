@@ -21,4 +21,4 @@ Project Requirements
 10. Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 11. Finally, you must add your project to the portfolio that you created in Module 2.
 
-[!img](./assets/images/) 
+![img](./assets/images/nutriwizzard.png)
